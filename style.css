@@ -4,45 +4,27 @@
     box-sizing: border-box;
 }
 
-body {
-    padding-top: 6rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-}
-
-.game-table {
-    border: 1.5px solid #000;
-    width: 30rem;
-    height: 30rem;
+.board {
     display: grid;
     grid-template-columns: repeat(10, 1fr);
     grid-template-rows: repeat(10, 1fr);
-    background: #fff;
+    width: 500px;
+    height: 500px;
+    border: 2px solid #000;
 }
 
-button {
-    border: 1px solid #000;
-    background-color: #fff;
+.cell {
+    border: 2px solid #000;
+    width: 50px;
+    height: 50px;
+    background: #968d8d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-button .fa-bomb {
+.fa-bomb {
+    font-size: 30px;
     color: red;
-    font-size: 2em;
-    display: none;
 }
 
-.bosXana {
-    background: #fff;
-
-}
-
-.bosXana.clicked {
-    background-color: green;
-}
-
-button:hover {
-    cursor: pointer;
-    background-color: #eee;
-}

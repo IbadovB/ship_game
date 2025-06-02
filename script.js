@@ -1,14 +1,49 @@
-function shipButton(event) {
-    const button = event.currentTarget;
-  
-    const bomb = button.querySelector(".fa-bomb");
-    if (bomb) {
-      bomb.style.display = "block";
+const board = document.querySelector('.board')
+let score = 0
+
+
+for (let i = 0; i < 100; i++) {
+
+    const cell = document.createElement('div')
+    cell.classList.add("cell")
+    board.appendChild(cell)
+}
+
+const ship = [10, 13, 35, 46, 50, 55, 78]
+const cells = document.querySelectorAll('.cell')
+
+cells.forEach((cell, index) => {
+    cell.addEventListener('click', () => {
+        if (ship.includes(index)) {
+            cell.innerHTML = `<i class="fa-solid fa-bomb"></i>`;
+            score++
+            document.querySelector('.score').textContent = score
+        } else {
+            cell.style.backgroundColor = 'green';
+        }
+         if (cell.classList.contains('clicked')) return;
+    cell.classList.add('clicked');
+    })
+   
+
+    if (score === ship.length) {
+        setTimeout(() => {
+            alert('you win')
+        })
     }
-  
-    if (button.classList.contains("bosXana")) {
-      button.classList.add("clicked");
-    }
-  
-    button.disabled = true;
-  }
+
+
+
+
+
+})
+
+
+
+
+
+
+
+
+
+
