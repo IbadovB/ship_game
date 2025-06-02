@@ -32,8 +32,8 @@ cells.forEach((cell, index) => {
         } else {
             cell.style.backgroundColor = 'green';
         }
-    })
-        } else {
+    }
+         else {
             cell.style.backgroundColor = 'green';
         }
        
