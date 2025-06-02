@@ -15,28 +15,28 @@ const cells = document.querySelectorAll('.cell')
 cells.forEach((cell, index) => {
     cell.addEventListener('click', () => {
 
-  if (cell.classList.contains('clicked')) return;
-    cell.classList.add('clicked');
+        if (cell.classList.contains('clicked')) return;
+        cell.classList.add('clicked');
 
         if (ship.includes(index)) {
             cell.innerHTML = `<i class="fa-solid fa-bomb"></i>`;
             score++
             document.querySelector('.score').textContent = score
 
-            
-       if (score === ship.length) {
+
+            if (score === ship.length) {
                 setTimeout(() => {
                     alert('You win!');
                 }, 100);
             }
-        } else {
-            cell.style.backgroundColor = 'green';
+            else {
+                cell.style.backgroundColor = 'green';
+            }
         }
-    })
-        } else {
+        else {
             cell.style.backgroundColor = 'green';
-        }
-       
+        }})
+
     })
 
 
