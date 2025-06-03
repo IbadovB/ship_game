@@ -12,39 +12,28 @@ for (let i = 0; i < 100; i++) {
 const ship = [10, 13, 35, 46, 50, 55, 78]
 const cells = document.querySelectorAll('.cell')
 
+
 cells.forEach((cell, index) => {
     cell.addEventListener('click', () => {
 
-  if (cell.classList.contains('clicked')) return;
-    cell.classList.add('clicked');
+        if (cell.classList.contains('clicked')) return;
+        cell.classList.add('clicked');
+
 
         if (ship.includes(index)) {
             cell.innerHTML = `<i class="fa-solid fa-bomb"></i>`;
             score++
+            ship.style.display.backgroundColor = "white"
             document.querySelector('.score').textContent = score
+        }
 
-            
-       if (score === ship.length) {
-                setTimeout(() => {
-                    alert('You win!');
-                }, 100);
-            }
+        if (score === ship.length) {
+            setTimeout(() => {
+                alert('You win!');
+            }, 100);
+
         } else {
             cell.style.backgroundColor = 'green';
         }
     })
-        } else {
-            cell.style.backgroundColor = 'green';
-        }
-       
-    })
-
-
-
-
-
-
-
-
-
-
+})
