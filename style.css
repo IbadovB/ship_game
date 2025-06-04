@@ -29,9 +29,11 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    background: #fff;
 }
 
 .fa-bomb {
     font-size: 30px;
     color: red;
+
 }

@@ -23,8 +23,7 @@ cells.forEach((cell, index) => {
         if (ship.includes(index)) {
             cell.innerHTML = `<i class="fa-solid fa-bomb"></i>`;
             score++
-            ship.style.display.backgroundColor = "white"
-            document.querySelector('.score').textContent = score
+             document.querySelector('#score').textContent = score
         }
 
         if (score === ship.length) {
